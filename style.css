@@ -1,0 +1,493 @@
+/* ================================================================
+   style.css — ВНЕШНИЙ ВИД САЙТА
+   HTML говорит, ЧТО есть на странице, а CSS — КАК это выглядит.
+   Каждое правило: селектор { свойство: значение; }
+   .название  — это класс (в HTML: class="название")
+   #название  — это id   (в HTML: id="название")
+   ================================================================ */
+
+
+/* ---------- 0. ЦВЕТА САЙТА -------------------------------------
+   Все цвета в одном месте. Поменяешь тут — поменяются везде.
+   Использовать так: color: var(--dark);                          */
+:root {
+  --bg: #F6F0FA;          /* фон страницы — светлая лаванда */
+  --dark: #3E2F5B;        /* основной текст и заголовки */
+  --text: #5A4E6E;        /* обычный текст чуть светлее */
+  --accent: #5E4886;      /* кнопки */
+  --accent-hover: #4A3670;/* кнопка при наведении */
+  --line: #DCCFEA;        /* тонкие рамки */
+  --card-purple: #EEE4F7;
+  --card-grey: #ECECF1;
+  --card-pink: #F8E7EF;
+  --white: #FFFCFF;
+  --icon: #9B86C4;        /* цвет иконок */
+}
+
+
+/* ---------- 1. ОБЩИЕ НАСТРОЙКИ ---------------------------------- */
+* {
+  box-sizing: border-box;  /* размеры считаются вместе с рамкой и отступами — так проще */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Заголовки рукописным шрифтом */
+h1, h2, h3, .logo {
+  font-family: 'Pangolin', 'Comic Sans MS', cursive;
+  color: var(--dark);
+  font-weight: 400;
+}
+
+a {
+  color: inherit;          /* ссылки не синие, а цвета текста */
+  text-decoration: none;   /* без подчёркивания */
+}
+
+/* Кнопка (используется в нескольких местах: class="button") */
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 999px;    /* очень большое скругление = «таблетка» */
+  font-weight: 700;
+  transition: background 0.2s;  /* плавная смена цвета */
+}
+.button:hover {
+  background: var(--accent-hover);
+}
+
+
+/* ---------- 2. ШАПКА -------------------------------------------- */
+.header {
+  display: flex;             /* ставим элементы в ряд */
+  align-items: center;       /* по центру по вертикали */
+  justify-content: space-between; /* логотип слева, контакты справа */
+  gap: 20px;
+  padding: 16px 48px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;          /* шапка «прилипает» к верху при прокрутке */
+  top: 0;
+  z-index: 10;               /* и лежит поверх остального */
+}
+
+.logo {
+  font-size: 36px;
+  white-space: nowrap;
+}
+.logo-heart {
+  color: var(--accent);
+}
+
+.menu {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.menu-button {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  background: var(--card-purple);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 18px;
+  cursor: pointer;           /* курсор-«пальчик» */
+  display: inline-block;
+  transition: background 0.2s;
+}
+.menu-button:hover {
+  background: #E2D5F1;
+}
+
+.contacts-button {
+  background: transparent;
+  border-color: transparent;
+}
+
+
+/* ---------- 3. ВЫПАДАЮЩИЕ МЕНЮ ----------------------------------
+   Как это работает:
+   1) окошко .dropdown спрятано (opacity: 0, visibility: hidden);
+   2) когда мышка над .menu-item (:hover) — окошко становится видимым.
+   :focus-within — то же самое, но для нажатия на телефоне и клавиатуры. */
+.menu-item {
+  position: relative;        /* окошко будет позиционироваться от этого пункта */
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 12px);    /* чуть ниже кнопки */
+  left: 0;
+  width: 320px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(62, 47, 91, 0.15);
+
+  /* спрятано: */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+
+/* Невидимый «мостик» между кнопкой и окошком,
+   чтобы окошко не закрывалось, пока ведёшь к нему мышку */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+/* ПОКАЗАТЬ окошко при наведении */
+.menu-item:hover .dropdown,
+.menu-item:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Окошко «Контакты» открывается влево, чтобы не вылезать за экран */
+.dropdown-right {
+  left: auto;
+  right: 0;
+  width: 300px;
+}
+
+.dropdown-title {
+  font-family: 'Pangolin', cursive;
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background 0.15s;
+}
+.dropdown-link:hover {
+  background: var(--card-purple);
+}
+.dropdown-link b {
+  display: block;
+  color: var(--dark);
+  font-size: 15px;
+}
+.dropdown-link span {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.dropdown-text {
+  font-size: 15px;
+  padding: 4px 0;
+}
+
+.dropdown-help {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--card-pink);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+
+/* ---------- 4. ГЛАВНЫЙ БЛОК (hero) ------------------------------ */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 0.9fr;  /* три колонки: текст | Квока | облачко */
+  align-items: center;
+  gap: 24px;
+    padding: 40px 64px 0;
+  background: linear-gradient(180deg, #F3EAFA 0%, #EADCF6 100%);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.hero-text {
+  padding-bottom: 50px;
+}
+
+.hero-title {
+  font-size: 96px;
+  line-height: 1;
+}
+
+.hero-subtitle {
+  font-family: 'Pangolin', cursive;
+  font-size: 24px;
+  color: var(--dark);
+  margin: 8px 0 16px 70px;
+}
+
+.hero-description {
+  font-size: 19px;
+  margin-bottom: 24px;
+}
+
+.hero-mascot {
+  position: relative;
+  height: 320px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: end;
+}
+
+.mascot-img {
+  position: relative;
+  max-height: 320px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 0;
+}
+
+.mascot-placeholder {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 3px dashed var(--icon);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Pangolin', cursive;
+  font-size: 22px;
+  color: var(--accent);
+}
+.mascot-placeholder small {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.speech-bubble {
+  background: var(--white);
+  border-radius: 40px;
+  padding: 28px 32px;
+  font-family: 'Pangolin', cursive;
+  font-size: 22px;
+  color: var(--dark);
+  transform: rotate(-4deg);  /* слегка наклонено, как на макете */
+  box-shadow: 0 8px 24px rgba(62, 47, 91, 0.08);
+}
+
+
+/* ---------- 5. ТРИ КАРТОЧКИ ------------------------------------- */
+.topics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* три одинаковые колонки */
+  gap: 24px;
+  padding: 32px 48px;
+}
+
+.topic-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+/* Карточка чуть «приподнимается» при наведении */
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(62, 47, 91, 0.12);
+}
+
+.topic-purple { background: var(--card-purple); }
+.topic-grey   { background: var(--card-grey); }
+.topic-pink   { background: var(--card-pink); }
+
+.topic-icon {
+  width: 110px;
+  flex-shrink: 0;            /* иконка не сжимается */
+  fill: var(--icon);
+}
+
+.topic-card h2 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.topic-card p {
+  font-size: 15px;
+  padding-right: 30px;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ---------- 6. ПОДДЕРЖКА ---------------------------------------- */
+.support {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;  /* текст + три карточки */
+  gap: 24px;
+  padding: 16px 48px 48px;
+  align-items: stretch;
+}
+
+.support-intro h2 {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+.support-intro p {
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+
+.support-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.support-card h3 {
+  font-size: 22px;
+}
+.support-card p {
+  font-size: 15px;
+  flex-grow: 1;              /* текст растягивается, ссылка уходит вниз */
+}
+
+.support-card-urgent {
+  background: var(--card-pink);
+}
+.phones {
+  color: var(--dark);
+}
+
+.small-link {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+
+/* ---------- 7. ПОДВАЛ ------------------------------------------- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 28px 48px;
+  background: #E3D6F0;
+}
+.footer .logo {
+  font-size: 30px;
+}
+.footer-logo p {
+  font-size: 14px;
+}
+.footer-links a {
+  margin: 0 8px;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.socials {
+  display: flex;
+  gap: 10px;
+}
+.social {
+  background: var(--accent);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.footer-note {
+  font-family: 'Pangolin', cursive;
+  font-size: 26px;
+  color: var(--dark);
+}
+
+
+/* ---------- 8. ТЕЛЕФОНЫ И УЗКИЕ ЭКРАНЫ --------------------------
+   @media — правила, которые включаются только на узком экране.
+   Тут всё перестраивается в одну колонку.                         */
+@media (max-width: 1100px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    position: static;     /* ← добавь: на телефоне шапка не прилипает к экрану */
+  }
+    .menu {
+    flex-wrap: nowrap;    /* кнопки в одну строку */
+    overflow-x: auto;     /* листаются пальцем вбок */
+    width: 100%;
+    padding-bottom: 4px;
+  }
+  .menu-button {
+    white-space: nowrap;  /* текст кнопки не переносится */
+  }
+  .hero {
+    grid-template-columns: 1fr;   /* одна колонка */
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .hero-subtitle {
+    margin-left: 0;
+  }
+  .hero-title {
+    font-size: 64px;
+  }
+  .topics,
+  .support {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .dropdown {
+    width: 280px;
+  }
+  .topic-icon {
+    width: 70px;
+  }
+  .topic-card {
+    min-width: 0;            /* карточка не вылезает за край экрана */
+  }
+  .socials {
+    flex-wrap: wrap;
+  }
+}

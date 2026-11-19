@@ -1,0 +1,363 @@
+/* ================================================================
+   pages.css — СТИЛИ ВНУТРЕННИХ СТРАНИЦ
+   (social.html и будущих: mental.html, emotional.html ...)
+   Цвета берутся из style.css (раздел 0, :root), поэтому
+   этот файл всегда подключается ПОСЛЕ style.css.
+   ================================================================ */
+
+
+/* ---------- 1. ВЕРХНИЙ БЛОК СТРАНИЦЫ ---------------------------- */
+.page-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.9fr;  /* текст | Квока | карточка «тяжело?» */
+  align-items: end;
+  gap: 24px;
+  padding: 20px 64px 0;
+  background: linear-gradient(180deg, #F3EAFA 0%, #EADCF6 100%);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.page-hero-text {
+  padding-bottom: 40px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--dark);
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.page-title {
+  font-size: 64px;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.page-intro {
+  font-size: 17px;
+  max-width: 480px;
+}
+
+.page-hero-mascot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 280px;
+}
+
+.page-mascot-img {
+  max-height: 260px;
+  max-width: 100%;
+  display: block;
+}
+
+/* Облачко «Ты не один(а)» над Квокой */
+.mini-bubble {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: var(--white);
+  border: 2px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-family: 'Pangolin', cursive;
+  font-size: 18px;
+  color: var(--dark);
+  transform: rotate(-6deg);
+  z-index: 2;
+}
+
+/* Карточка «Что делать, если тебе тяжело?» */
+.help-card {
+  align-self: center;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 24px 26px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(62, 47, 91, 0.08);
+  transform: rotate(-2deg);
+}
+.help-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.help-card p {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.help-card .button {
+  padding: 10px 22px;
+  font-size: 15px;
+}
+
+
+/* ---------- 2. ВКЛАДКИ: МЕНЮ СЛЕВА + КАРТОЧКИ ------------------- */
+.topic-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;  /* меню 260px, остальное — карточки */
+  gap: 32px;
+  padding: 32px 48px;
+  align-items: start;
+}
+
+.sidebar {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;        /* меню «едет» вместе со страницей при прокрутке */
+  top: 90px;
+}
+
+.side-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background 0.35s ease;
+}
+.side-link:hover {
+  background: var(--card-purple);
+}
+/* Выбранная вкладка */
+.side-link.active {
+  background: var(--card-purple);
+  box-shadow: inset 4px 0 0 var(--accent);  /* фиолетовая полоска слева */
+}
+
+.side-icon {
+  font-size: 22px;
+}
+
+/* Блоки вкладок: все спрятаны, кроме того, у которого класс active */
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+  animation: fade-in 0.6s ease-out;   /* заголовок вкладки появляется плавно */
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Карточки появляются по очереди, одна за другой.
+   0.7s — длительность появления каждой карточки (больше = медленнее).
+   animation-delay — на сколько позже появляется следующая. */
+.tab-panel.active .problem-card {
+  animation: card-in 0.7s ease-out both;
+}
+.tab-panel.active .problem-card:nth-child(1) { animation-delay: 0.10s; }
+.tab-panel.active .problem-card:nth-child(2) { animation-delay: 0.18s; }
+.tab-panel.active .problem-card:nth-child(3) { animation-delay: 0.26s; }
+.tab-panel.active .problem-card:nth-child(4) { animation-delay: 0.34s; }
+.tab-panel.active .problem-card:nth-child(5) { animation-delay: 0.42s; }
+.tab-panel.active .problem-card:nth-child(6) { animation-delay: 0.50s; }
+.tab-panel.active .problem-card:nth-child(7) { animation-delay: 0.58s; }
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.panel-title {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+.panel-intro {
+  font-size: 16px;
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+
+/* Сетка карточек проблем: 3 в ряд */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.problem-card {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--card-purple);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px 20px 48px;  /* снизу место для стрелки */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;  /* плавный «подъём» при наведении */
+}
+.problem-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(62, 47, 91, 0.12);
+}
+
+.problem-icon {
+  font-size: 34px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.problem-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.problem-card p {
+  font-size: 14px;
+}
+
+/* .card-arrow уже есть в style.css — тут только чуть меньше */
+.problem-card .card-arrow {
+  right: 16px;
+  bottom: 14px;
+  width: 28px;
+  height: 28px;
+}
+
+
+/* ---------- 3. НИЖНИЙ РЯД --------------------------------------- */
+.extra-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1.2fr 0.8fr;
+  gap: 24px;
+  padding: 8px 48px 48px;
+  align-items: stretch;
+}
+
+.also-card {
+  display: flex;
+  align-items: center;      /* текст по центру по высоте (было flex-end) */
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--card-purple);
+  border-radius: 28px;
+  padding: 28px 28px 0 28px;
+  overflow: hidden;
+}
+.also-card > div {
+  padding-bottom: 28px;
+  flex: 1;                 /* текст занимает всё свободное место слева */
+}
+.also-card h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.also-card p {
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+.also-mascot {
+  max-height: 245px;
+  display: block;
+  align-self: flex-end;
+  flex-shrink: 0;          /* Квока не сжимается */
+  margin-right: -45px;     /* правее: чем больше минус, тем правее */
+  margin-bottom: -9px;    /* ниже: чем больше минус, тем ниже */
+}
+
+.resources-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.resources-card h3 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+.resource-link {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: var(--dark);
+  text-decoration: underline;
+  transition: background 0.15s;
+}
+.resource-link:hover {
+  background: var(--card-purple);
+}
+
+.remember-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--card-pink);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 24px;
+}
+.remember-card p {
+  font-family: 'Pangolin', cursive;
+  font-size: 22px;
+  color: var(--dark);
+  transform: rotate(-4deg);
+}
+
+
+/* ---------- 4. СРЕДНИЕ ЭКРАНЫ (планшеты) ------------------------ */
+@media (max-width: 1250px) {
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 карточки в ряд */
+  }
+}
+
+/* ---------- 5. ТЕЛЕФОНЫ ----------------------------------------- */
+@media (max-width: 900px) {
+  .page-hero,
+  .topic-layout,
+  .extra-row {
+    grid-template-columns: 1fr;   /* всё в одну колонку */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page-title {
+    font-size: 44px;
+  }
+  .page-hero-mascot {
+    height: 220px;
+  }
+  .help-card {
+    transform: none;
+  }
+  /* Меню вкладок на телефоне — горизонтальная лента */
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .side-link {
+    white-space: nowrap;
+    width: auto;
+  }
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+}

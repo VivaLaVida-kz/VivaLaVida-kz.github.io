@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Социальные трудности — VivaLaVida</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pangolin&display=swap" rel="stylesheet">
+
+  <!-- Общие стили сайта (шапка, подвал, цвета, кнопки) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Стили только для внутренних страниц (эта страница и будущие) -->
+  <link rel="stylesheet" href="pages.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       ШАПКА — точно такая же, как на главной.
+       Ссылки в окошке «Социальные трудности» ведут на нужную вкладку:
+       social.html#family откроет страницу сразу на «Семье».
+       ============================================================ -->
+   <header class="header">
+    <a href="index.html" class="logo">
+      <span class="logo-heart">♡</span> VivaLaVida
+    </a>
+
+    <nav class="menu">
+      <div class="menu-item">
+        <a href="social.html" class="menu-button">Социальные трудности <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="social.html#communication" class="dropdown-link">
+            <b>Общение и отношения</b>
+            <span>Буллинг, конфликты, личные границы</span>
+          </a>
+          <a href="social.html#family" class="dropdown-link">
+            <b>Семья</b>
+            <span>Непонимание, гиперконтроль, перемены</span>
+          </a>
+          <a href="social.html#school" class="dropdown-link">
+            <b>Школа и учёба</b>
+            <span>Кибербуллинг, давление, адаптация</span>
+          </a>
+          <a href="social.html#society" class="dropdown-link">
+            <b>Общество</b>
+            <span>Дискриминация, ожидания, изоляция</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="mental.html" class="menu-button">Психическое здоровье <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="mental.html#mood" class="dropdown-link">
+            <b>Настроение</b>
+            <span>Депрессия, апатия, выгорание</span>
+          </a>
+          <a href="mental.html#anxiety" class="dropdown-link">
+            <b>Тревожные расстройства</b>
+            <span>Фобии, паника, тревога разлуки</span>
+          </a>
+          <a href="mental.html#overview" class="dropdown-link">
+            <b>РПП, ОКР, ПТСР, СДВГ</b>
+            <span>Что это и как отличить</span>
+          </a>
+          <a href="mental.html#other" class="dropdown-link">
+            <b>Другие состояния</b>
+            <span>Сон, селф-харм, зависимость</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="emotional.html" class="menu-button">Эмоциональное состояние <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="emotional.html#anxiety" class="dropdown-link">
+            <b>Тревога и стресс</b>
+            <span>Когда напряжение не отпускает</span>
+          </a>
+          <a href="emotional.html#burnout" class="dropdown-link">
+            <b>Выгорание и мотивация</b>
+            <span>Нет сил и ничего не хочется</span>
+          </a>
+          <a href="emotional.html#selfesteem" class="dropdown-link">
+            <b>Самооценка</b>
+            <span>Чувство вины, стыда, «я не такой»</span>
+          </a>
+          <a href="emotional.html#misunderstood" class="dropdown-link">
+            <b>Непонимание</b>
+            <span>Кажется, что никто не понимает</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#support" class="menu-button menu-link">Поддержка</a>
+    </nav>
+
+    <div class="menu-item menu-item-right">
+      <button class="menu-button contacts-button">✉ Контакты</button>
+      <div class="dropdown dropdown-right">
+        <p class="dropdown-title">Контакты</p>
+        <p class="dropdown-text">Почта: [скоро появится]</p>
+        <p class="dropdown-text">Telegram: [скоро появится]</p>
+        <p class="dropdown-text">Instagram: [скоро появится]</p>
+        <div class="dropdown-help">
+          Нужна помощь прямо сейчас?<br>
+          <b>150</b> — линия доверия для детей и молодёжи, бесплатно и круглосуточно
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         1. ВЕРХНИЙ БЛОК: название раздела, Квока, карточка «тяжело?»
+         ============================================================ -->
+    <section class="page-hero">
+      <div class="page-hero-text">
+        <a href="index.html" class="back-link">← На главную</a>
+        <h1 class="page-title">Социальные трудности</h1>
+        <p class="page-intro">
+          Иногда жизнь в обществе может быть сложной.
+          Здесь ты найдёшь информацию о распространённых проблемах
+          и способах их решения.
+        </p>
+      </div>
+
+      <div class="page-hero-mascot">
+        <div class="mini-bubble">Ты не один(а).<br>Мы рядом ♡</div>
+        <!-- Та же картинка Квоки, что и на главной -->
+        <img src="images/kvoka.png" alt="Квока" class="page-mascot-img"
+             onerror="this.style.display='none'">
+      </div>
+
+      <div class="help-card">
+        <h3>Что делать, если тебе тяжело?</h3>
+        <p>Ты можешь написать чат-боту, зайти в наше сообщество или позвонить на линию доверия <b>150</b>.</p>
+        <a href="index.html#support" class="button">Перейти в поддержку →</a>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. ВКЛАДКИ: меню слева + карточки проблем справа.
+         Нажимаешь слева на подтему — справа меняются карточки.
+         Как это работает — смотри <script> в самом низу страницы.
+         ============================================================ -->
+    <section class="topic-layout">
+
+      <!-- Меню вкладок. data-tab = id блока, который нужно показать -->
+      <aside class="sidebar">
+        <button class="side-link active" data-tab="communication"><span class="side-icon">👥</span> Общение и отношения</button>
+        <button class="side-link" data-tab="family"><span class="side-icon">🏠</span> Семья</button>
+        <button class="side-link" data-tab="school"><span class="side-icon">🎓</span> Школа и учёба</button>
+        <button class="side-link" data-tab="society"><span class="side-icon">🌍</span> Общество</button>
+      </aside>
+
+      <div class="tab-panels">
+
+        <!-- ВКЛАДКА 1: ОБЩЕНИЕ И ОТНОШЕНИЯ (видна сразу — у неё класс active) -->
+        <div class="tab-panel active" id="communication">
+          <h2 class="panel-title">👥 Общение и отношения</h2>
+          <p class="panel-intro">Отношения с другими людьми — важная часть жизни. Но иногда они приносят больше боли, чем радости. Разберёмся, с чем ты можешь столкнуться:</p>
+
+          <div class="problem-grid">
+            <!-- Одна карточка проблемы. Скопируй её, чтобы добавить новую.
+                 href="#" потом заменишь на страницу проблемы, например bullying.html -->
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🫂</span>
+              <div>
+                <h3>Буллинг</h3>
+                <p>Травля, насмешки и исключение из компании могут сильно ранить. Узнай, как себя защитить и куда обратиться.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">💬</span>
+              <div>
+                <h3>Конфликты</h3>
+                <p>Ссоры — часть жизни. Важно знать, как решать их спокойно и честно.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">⚡</span>
+              <div>
+                <h3>Давление</h3>
+                <p>Когда от тебя требуют быть «как все» или делать то, чего ты не хочешь.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🛡️</span>
+              <div>
+                <h3>Нарушение личных границ</h3>
+                <p>Важно уметь говорить «нет» и защищать своё пространство.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">💔</span>
+              <div>
+                <h3>Токсичные отношения</h3>
+                <p>Как распознать нездоровые отношения и не потерять себя.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🆘</span>
+              <div>
+                <h3>Насилие и домогательства</h3>
+                <p>Если с тобой так поступили — это не твоя вина. Узнай, где найти помощь.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🥀</span>
+              <div>
+                <h3>Расставание</h3>
+                <p>Когда отношения заканчиваются, бывает очень больно. Как пережить это.</p>
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ВКЛАДКА 2: СЕМЬЯ -->
+        <div class="tab-panel" id="family">
+          <h2 class="panel-title">🏠 Семья</h2>
+          <p class="panel-intro">Семья может быть опорой, но иногда дома бывает трудно. Ты не один(а) с этим:</p>
+
+          <div class="problem-grid">
+            <a href="#" class="problem-card">
+              <span class="problem-icon">💬</span>
+              <div><h3>Конфликты</h3><p>Ссоры с родителями, братьями или сёстрами. Как договориться.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🌫️</span>
+              <div><h3>Непонимание</h3><p>Когда кажется, что дома тебя не слышат. Как начать разговор.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🔄</span>
+              <div><h3>Семейные изменения</h3><p>Развод, переезд, новый член семьи — как пережить перемены.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🔒</span>
+              <div><h3>Гиперконтроль</h3><p>Когда родители контролируют каждый шаг. Как найти баланс.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🛡️</span>
+              <div><h3>Нарушение личных границ</h3><p>Твоё личное пространство важно — даже дома.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ВКЛАДКА 3: ШКОЛА И УЧЁБА -->
+        <div class="tab-panel" id="school">
+          <h2 class="panel-title">🎓 Школа и учёба</h2>
+          <p class="panel-intro">Школа — это не только уроки, но и люди, ожидания и стресс. Вот с чем часто сталкиваются:</p>
+
+          <div class="problem-grid">
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🫂</span>
+              <div><h3>Буллинг</h3><p>Травля в классе или школе. Как защитить себя и кому рассказать.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">📱</span>
+              <div><h3>Кибербуллинг</h3><p>Оскорбления и травля в интернете и чатах. Что с этим делать.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">💬</span>
+              <div><h3>Конфликты</h3><p>Ссоры с одноклассниками или учителями. Как их решать.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🔋</span>
+              <div><h3>Отсутствие мотивации</h3><p>Когда ничего не хочется учить. Почему так бывает и что помогает.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🧭</span>
+              <div><h3>Трудности адаптации</h3><p>Новая школа или класс. Как привыкнуть и найти своих.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">⚡</span>
+              <div><h3>Давление</h3><p>Оценки, экзамены, ожидания. Как не сгореть.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ВКЛАДКА 4: ОБЩЕСТВО -->
+        <div class="tab-panel" id="society">
+          <h2 class="panel-title">🌍 Общество</h2>
+          <p class="panel-intro">Иногда трудно не из-за конкретного человека, а из-за того, как устроено общество вокруг:</p>
+
+          <div class="problem-grid">
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🚫</span>
+              <div><h3>Дискриминация</h3><p>Когда к тебе относятся хуже из-за того, кто ты есть.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🎭</span>
+              <div><h3>Ожидания</h3><p>Каким «надо» быть. Как остаться собой.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🏝️</span>
+              <div><h3>Социальная изоляция</h3><p>Когда чувствуешь себя одиноко и не на своём месте.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">⚖️</span>
+              <div><h3>Неравенство</h3><p>Когда у людей разные возможности. Что можно сделать.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">👁️</span>
+              <div><h3>Предвзятое отношение</h3><p>Стереотипы и ярлыки. Как с ними справляться.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="problem-card">
+              <span class="problem-icon">🗯️</span>
+              <div><h3>Осуждение</h3><p>Когда тебя критикуют и обсуждают. Как сохранить себя.</p></div>
+              <span class="card-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. НИЖНИЙ РЯД: «Также сложно», полезные ресурсы, «Помни»
+         ============================================================ -->
+    <section class="extra-row">
+
+      <div class="also-card">
+        <div>
+          <h3>Также может быть сложно…</h3>
+          <p>Одиночество, грусть, чувство, что тебя не понимают? Загляни в раздел про эмоциональное состояние.</p>
+          <a href="emotional.html" class="button">Узнать больше →</a>
+        </div>
+        <img src="images/kvoka2.png" alt="" class="also-mascot" onerror="this.style.display='none'">
+      </div>
+
+      <div class="resources-card">
+        <h3>🔗 Полезные ресурсы</h3>
+        <!-- Ссылки на сообщества и чат-бот пока пустые (#) -->
+        <a href="#" class="resource-link">Чат сообщества <span>↗</span></a>
+        <a href="#" class="resource-link">Чат-бот помощник <span>↗</span></a>
+        <!-- tel: — на телефоне по нажатию сразу откроется звонок -->
+        <a href="tel:150" class="resource-link">Линия доверия 150 (звонок) <span>↗</span></a>
+        <a href="https://wa.me/77081060810" target="_blank" class="resource-link">Линия 150 в WhatsApp <span>↗</span></a>
+      </div>
+
+      <div class="remember-card">
+        <p>Помни:<br>просить о помощи —<br>это нормально ♡</p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ПОДВАЛ — такой же, как на главной -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="logo">VivaLaVida</span>
+      <p>Забота. Поддержка. Понимание.</p>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html#about">О нас</a> |
+      <a href="#">Частые вопросы</a> |
+      <a href="#">Контакты</a>
+    </nav>
+    <div class="socials">
+      <a href="#" class="social">Telegram</a>
+      <a href="#" class="social">Discord</a>
+      <a href="#" class="social">YouTube</a>
+      <a href="#" class="social">Instagram</a>
+    </div>
+    <p class="footer-note">Ты важен(а). ♡</p>
+  </footer>
+
+
+  <!-- ============================================================
+       СКРИПТ ДЛЯ ВКЛАДОК (JavaScript).
+       Он делает одну вещь: при нажатии на кнопку слева
+       показывает нужный блок и прячет остальные.
+       ============================================================ -->
+  <script>
+    // Находим все кнопки слева и все блоки с карточками
+    const tabButtons = document.querySelectorAll('.side-link');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    // Функция: открыть вкладку с нужным id
+    function openTab(id) {
+      tabButtons.forEach(function (button) {
+        // кнопка подсвечивается, если её data-tab совпадает с id
+        button.classList.toggle('active', button.dataset.tab === id);
+      });
+      tabPanels.forEach(function (panel) {
+        // показывается только блок с этим id
+        panel.classList.toggle('active', panel.id === id);
+      });
+    }
+
+    // При нажатии на кнопку — открываем её вкладку
+    tabButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        openTab(button.dataset.tab);
+        history.replaceState(null, '', '#' + button.dataset.tab); // меняем адрес, например на #family
+      });
+    });
+
+    // Если страницу открыли по ссылке вида social.html#family — сразу открываем «Семью»
+    function openFromAddress() {
+      const id = location.hash.replace('#', '');
+      if (document.getElementById(id)) {
+        openTab(id);
+      }
+    }
+    openFromAddress();
+    window.addEventListener('hashchange', openFromAddress);
+  </script>
+
+</body>
+</html>

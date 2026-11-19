@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Психическое здоровье — VivaLaVida</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pangolin&display=swap" rel="stylesheet">
+
+  <!-- Порядок важен: общие стили → стили внутренних страниц → новые блоки -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="sections.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       ШАПКА — одинаковая на всех страницах.
+       Кнопки сверху — ссылки на страницы разделов,
+       ссылки в окошках ведут сразу на нужную вкладку (#...).
+       ============================================================ -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span class="logo-heart">♡</span> VivaLaVida
+    </a>
+
+    <nav class="menu">
+      <div class="menu-item">
+        <a href="social.html" class="menu-button">Социальные трудности <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="social.html#communication" class="dropdown-link">
+            <b>Общение и отношения</b>
+            <span>Буллинг, конфликты, личные границы</span>
+          </a>
+          <a href="social.html#family" class="dropdown-link">
+            <b>Семья</b>
+            <span>Непонимание, гиперконтроль, перемены</span>
+          </a>
+          <a href="social.html#school" class="dropdown-link">
+            <b>Школа и учёба</b>
+            <span>Кибербуллинг, давление, адаптация</span>
+          </a>
+          <a href="social.html#society" class="dropdown-link">
+            <b>Общество</b>
+            <span>Дискриминация, ожидания, изоляция</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="mental.html" class="menu-button">Психическое здоровье <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="mental.html#mood" class="dropdown-link">
+            <b>Настроение</b>
+            <span>Депрессия, апатия, выгорание</span>
+          </a>
+          <a href="mental.html#anxiety" class="dropdown-link">
+            <b>Тревожные расстройства</b>
+            <span>Фобии, паника, тревога разлуки</span>
+          </a>
+          <a href="mental.html#overview" class="dropdown-link">
+            <b>РПП, ОКР, ПТСР, СДВГ</b>
+            <span>Что это и как отличить</span>
+          </a>
+          <a href="mental.html#other" class="dropdown-link">
+            <b>Другие состояния</b>
+            <span>Сон, селф-харм, зависимость</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="emotional.html" class="menu-button">Эмоциональное состояние <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="emotional.html#anxiety" class="dropdown-link">
+            <b>Тревога и стресс</b>
+            <span>Когда напряжение не отпускает</span>
+          </a>
+          <a href="emotional.html#burnout" class="dropdown-link">
+            <b>Выгорание и мотивация</b>
+            <span>Нет сил и ничего не хочется</span>
+          </a>
+          <a href="emotional.html#selfesteem" class="dropdown-link">
+            <b>Самооценка</b>
+            <span>Чувство вины, стыда, «я не такой»</span>
+          </a>
+          <a href="emotional.html#misunderstood" class="dropdown-link">
+            <b>Непонимание</b>
+            <span>Кажется, что никто не понимает</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#support" class="menu-button menu-link">Поддержка</a>
+    </nav>
+
+    <div class="menu-item menu-item-right">
+      <button class="menu-button contacts-button">✉ Контакты</button>
+      <div class="dropdown dropdown-right">
+        <p class="dropdown-title">Контакты</p>
+        <p class="dropdown-text">Почта: [скоро появится]</p>
+        <p class="dropdown-text">Telegram: [скоро появится]</p>
+        <p class="dropdown-text">Instagram: [скоро появится]</p>
+        <div class="dropdown-help">
+          Нужна помощь прямо сейчас?<br>
+          <b>150</b> — линия доверия для детей и молодёжи, бесплатно и круглосуточно
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ВАЖНО: тексты про психическое здоровье на этой странице — черновик.
+       Перед публикацией их должен проверить психолог или врач. -->
+
+  <main>
+
+    <!-- ============================================================
+         1. ВЕРХНИЙ БЛОК: текст слева, большая Квока справа
+         ============================================================ -->
+    <section class="hero-split">
+      <div class="hero-split-text">
+        <a href="index.html" class="back-link">← На главную</a>
+        <h1 class="page-title">Психическое здоровье</h1>
+        <p class="lead-quote">Это не «слабость» и не «странность» — это важная часть твоего благополучия ♡</p>
+        <p class="page-intro">
+          Забота о ментальном здоровье помогает лучше понимать себя,
+          справляться со стрессом и жить спокойнее.
+        </p>
+        <a href="#topics" class="button">Узнать больше ↓</a>
+      </div>
+
+      <div class="hero-split-mascot">
+        <div class="cloud-bubble">Ты не один(а).<br>Мы рядом ♡</div>
+        <img src="images/kvoka5.png" alt="Квока" class="hero-split-img"
+             onerror="this.style.display='none'">
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. ВКЛАДКИ: боковое меню + содержимое
+         Первая вкладка «Общее» — карточки всех состояний.
+         Нажатие на карточку открывает вкладку этого состояния.
+         ============================================================ -->
+    <section class="topic-layout" id="topics">
+
+      <aside class="sidebar">
+        <p class="sidebar-title">🧠 Психическое здоровье</p>
+        <button class="side-link active" data-tab="overview"><span class="side-icon">✦</span> Общее</button>
+        <button class="side-link" data-tab="mood"><span class="side-icon">🌧️</span> Настроение</button>
+        <button class="side-link" data-tab="anxiety"><span class="side-icon">🌀</span> Тревожные расстройства</button>
+        <button class="side-link" data-tab="ed"><span class="side-icon">🍽️</span> РПП</button>
+        <button class="side-link" data-tab="ocd"><span class="side-icon">🧩</span> ОКР</button>
+        <button class="side-link" data-tab="ptsd"><span class="side-icon">⚡</span> ПТСР</button>
+        <button class="side-link" data-tab="adhd"><span class="side-icon">🎯</span> СДВГ</button>
+        <button class="side-link" data-tab="other"><span class="side-icon">🌙</span> Другие состояния</button>
+      </aside>
+
+      <div class="tab-panels">
+
+        <!-- ВКЛАДКА «ОБЩЕЕ»: карточки-кнопки (data-open = какую вкладку открыть) -->
+        <div class="tab-panel active" id="overview">
+          <h2 class="panel-title">✦ С чем мы можем столкнуться?</h2>
+          <p class="panel-intro">У каждого бывают сложные периоды. Важно знать, что с этим делать. Нажми на карточку, чтобы узнать больше.</p>
+
+          <div class="problem-grid">
+            <button class="problem-card" data-open="mood">
+              <span class="problem-icon">🌧️</span>
+              <div><h3>Настроение</h3><p>Депрессия, апатия, эмоциональное выгорание.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+            <button class="problem-card" data-open="anxiety">
+              <span class="problem-icon">🌀</span>
+              <div><h3>Тревожные расстройства</h3><p>Тревога разлуки, фобии, паническое расстройство.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+            <button class="problem-card" data-open="ed">
+              <span class="problem-icon">🍽️</span>
+              <div><h3>РПП</h3><p>Расстройства пищевого поведения.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+            <button class="problem-card" data-open="ocd">
+              <span class="problem-icon">🧩</span>
+              <div><h3>ОКР</h3><p>Навязчивые мысли и действия.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+            <button class="problem-card" data-open="ptsd">
+              <span class="problem-icon">⚡</span>
+              <div><h3>ПТСР</h3><p>Последствия травмирующих событий.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+            <button class="problem-card" data-open="adhd">
+              <span class="problem-icon">🎯</span>
+              <div><h3>СДВГ</h3><p>Трудности с вниманием и саморегуляцией.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+            <button class="problem-card" data-open="other">
+              <span class="problem-icon">🌙</span>
+              <div><h3>Другие состояния</h3><p>Проблемы со сном, селф-харм, зависимость.</p></div>
+              <span class="card-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+
+        <!-- ВКЛАДКА «НАСТРОЕНИЕ».
+             Все вкладки состояний устроены одинаково:
+             заголовок → подтемы (sub-cards) → «Как проявляется» / «Что может помочь» → пометка -->
+        <div class="tab-panel" id="mood">
+          <h2 class="panel-title">🌧️ Настроение</h2>
+          <p class="panel-intro">Грустить иногда — нормально. Но если тяжёлое настроение не проходит неделями и мешает жить, стоит обратить на это внимание.</p>
+
+          <div class="sub-cards">
+            <div class="sub-card"><h3>Депрессия</h3><p>Подавленность или потеря интереса почти ко всему, которые держатся дольше двух недель.</p></div>
+            <div class="sub-card"><h3>Апатия</h3><p>Безразличие: ничего не хочется и ничто не радует, даже то, что раньше нравилось.</p></div>
+            <div class="sub-card"><h3>Эмоциональное выгорание</h3><p>Истощение от долгого стресса — например, учёбы без отдыха.</p></div>
+          </div>
+
+          <div class="info-columns">
+            <div class="info-box">
+              <h3>Как это может проявляться</h3>
+              <ul>
+                <li>грусть, пустота или раздражительность почти каждый день</li>
+                <li>нет сил, трудно встать утром</li>
+                <li>изменился сон или аппетит</li>
+                <li>трудно сосредоточиться</li>
+                <li>мысли «я ничего не стою», «всё бессмысленно»</li>
+              </ul>
+            </div>
+            <div class="info-box info-help">
+              <h3>Что может помочь</h3>
+              <ul>
+                <li>рассказать о своём состоянии человеку, которому доверяешь</li>
+                <li>маленькие шаги: прогулка, сон, еда вовремя</li>
+                <li>не требовать от себя слишком многого</li>
+                <li>обратиться к психологу — депрессия хорошо поддаётся лечению</li>
+              </ul>
+            </div>
+          </div>
+          <p class="notice">ⓘ Только специалист может поставить диагноз. Если ты узнаёшь себя — это повод поговорить с психологом или врачом, а не вешать на себя ярлык.</p>
+        </div>
+
+
+        <!-- ВКЛАДКА «ТРЕВОЖНЫЕ РАССТРОЙСТВА» -->
+        <div class="tab-panel" id="anxiety">
+          <h2 class="panel-title">🌀 Тревожные расстройства</h2>
+          <p class="panel-intro">Тревога — естественная реакция на опасность. Расстройством она становится, когда появляется слишком часто, слишком сильно и мешает обычной жизни.</p>
+
+          <div class="sub-cards">
+            <div class="sub-card"><h3>Тревога разлуки</h3><p>Сильный страх расставаться с близкими и мысли, что с ними что-то случится.</p></div>
+            <div class="sub-card"><h3>Фобии</h3><p>Очень сильный страх конкретной вещи или ситуации, из-за которого её избегают.</p></div>
+            <div class="sub-card"><h3>Паническое расстройство</h3><p>Повторяющиеся внезапные приступы паники и страх, что приступ повторится.</p></div>
+          </div>
+
+          <div class="info-columns">
+            <div class="info-box">
+              <h3>Как это может проявляться</h3>
+              <ul>
+                <li>сердце колотится, трудно дышать, кружится голова</li>
+                <li>постоянное беспокойство, которое трудно остановить</li>
+                <li>избегание мест и ситуаций, которые пугают</li>
+                <li>напряжение в теле, проблемы со сном</li>
+              </ul>
+            </div>
+            <div class="info-box info-help">
+              <h3>Что может помочь</h3>
+              <ul>
+                <li>медленное дыхание: вдох на 4 счёта, выдох на 6</li>
+                <li>упражнение «5-4-3-2-1»: назови 5 вещей, которые видишь, 4 — которые слышишь…</li>
+                <li>рассказать взрослому, которому доверяешь</li>
+                <li>психотерапия — тревожные расстройства хорошо лечатся</li>
+              </ul>
+            </div>
+          </div>
+          <p class="notice">ⓘ Если приступы похожи на проблемы с сердцем или дыханием, сначала стоит провериться у врача.</p>
+        </div>
+
+
+        <!-- ВКЛАДКА «РПП» -->
+        <div class="tab-panel" id="ed">
+          <h2 class="panel-title">🍽️ РПП — расстройства пищевого поведения</h2>
+          <p class="panel-intro">Это серьёзные состояния, при которых отношения с едой и своим телом начинают управлять жизнью. К ним относятся, например, анорексия, булимия и компульсивное переедание.</p>
+
+          <div class="info-columns">
+            <div class="info-box">
+              <h3>Как это может проявляться</h3>
+              <ul>
+                <li>мысли о еде, весе и фигуре занимают почти всё время</li>
+                <li>жёсткие ограничения в еде или, наоборот, приступы переедания</li>
+                <li>сильное чувство вины после еды</li>
+                <li>желание скрывать, что и сколько ты ешь</li>
+              </ul>
+            </div>
+            <div class="info-box info-help">
+              <h3>Что может помочь</h3>
+              <ul>
+                <li>рассказать об этом взрослому, которому доверяешь</li>
+                <li>обратиться к врачу или психологу — чем раньше, тем лучше</li>
+                <li>помнить: восстановиться можно, и ты этого заслуживаешь</li>
+              </ul>
+            </div>
+          </div>
+          <p class="notice notice-urgent">♡ РПП влияет и на психику, и на здоровье тела, поэтому здесь особенно важна помощь специалиста. Поговорить можно анонимно по линии доверия <b>150</b>.</p>
+        </div>
+
+
+        <!-- ВКЛАДКА «ОКР» -->
+        <div class="tab-panel" id="ocd">
+          <h2 class="panel-title">🧩 ОКР — обсессивно-компульсивное расстройство</h2>
+          <p class="panel-intro">ОКР — это не «любовь к порядку». Это навязчивые неприятные мысли (обсессии) и действия (компульсии), которые человек повторяет, чтобы снизить тревогу.</p>
+
+          <div class="info-columns">
+            <div class="info-box">
+              <h3>Как это может проявляться</h3>
+              <ul>
+                <li>пугающие мысли, которые появляются против воли</li>
+                <li>повторяющиеся действия: проверять, мыть руки, пересчитывать</li>
+                <li>ощущение, что если не сделать «ритуал», случится плохое</li>
+                <li>на ритуалы уходит много времени</li>
+              </ul>
+            </div>
+            <div class="info-box info-help">
+              <h3>Что может помочь</h3>
+              <ul>
+                <li>понять: навязчивые мысли — не твои желания и не делают тебя плохим</li>
+                <li>рассказать близкому человеку</li>
+                <li>психотерапия (КПТ) — один из самых действенных способов</li>
+              </ul>
+            </div>
+          </div>
+          <p class="notice">ⓘ Только специалист может поставить диагноз.</p>
+        </div>
+
+
+        <!-- ВКЛАДКА «ПТСР» -->
+        <div class="tab-panel" id="ptsd">
+          <h2 class="panel-title">⚡ ПТСР — посттравматическое стрессовое расстройство</h2>
+          <p class="panel-intro">Может появиться после очень пугающего или тяжёлого события: насилия, аварии, потери. Это нормальная реакция психики на ненормальную ситуацию.</p>
+
+          <div class="info-columns">
+            <div class="info-box">
+              <h3>Как это может проявляться</h3>
+              <ul>
+                <li>воспоминания, которые накатывают сами, кошмары</li>
+                <li>избегание всего, что напоминает о событии</li>
+                <li>постоянное напряжение, легко испугаться</li>
+                <li>это длится дольше месяца после события</li>
+              </ul>
+            </div>
+            <div class="info-box info-help">
+              <h3>Что может помочь</h3>
+              <ul>
+                <li>безопасное место и люди, которым доверяешь</li>
+                <li>не заставлять себя «просто забыть»</li>
+                <li>специалист, который работает с травмой</li>
+              </ul>
+            </div>
+          </div>
+          <p class="notice">ⓘ То, что случилось, — не твоя вина. Помощь работает, даже если прошло много времени.</p>
+        </div>
+
+
+        <!-- ВКЛАДКА «СДВГ» -->
+        <div class="tab-panel" id="adhd">
+          <h2 class="panel-title">🎯 СДВГ — синдром дефицита внимания и гиперактивности</h2>
+          <p class="panel-intro">Это особенность работы мозга, которая обычно заметна с детства. СДВГ — не лень и не плохое воспитание.</p>
+
+          <div class="info-columns">
+            <div class="info-box">
+              <h3>Как это может проявляться</h3>
+              <ul>
+                <li>трудно удерживать внимание, легко отвлечься</li>
+                <li>забываешь и теряешь вещи, сложно начать задачу</li>
+                <li>трудно усидеть на месте</li>
+                <li>действуешь импульсивно, перебиваешь</li>
+              </ul>
+            </div>
+            <div class="info-box info-help">
+              <h3>Что может помочь</h3>
+              <ul>
+                <li>делить большие задачи на маленькие шаги</li>
+                <li>списки, напоминания, таймеры</li>
+                <li>диагностика у специалиста — она помогает подобрать поддержку</li>
+              </ul>
+            </div>
+          </div>
+          <p class="notice">ⓘ Невнимательность бывает у всех. Поставить диагноз может только специалист.</p>
+        </div>
+
+
+        <!-- ВКЛАДКА «ДРУГИЕ СОСТОЯНИЯ» -->
+        <div class="tab-panel" id="other">
+          <h2 class="panel-title">🌙 Другие состояния</h2>
+          <p class="panel-intro">Есть и другие трудности, о которых важно говорить.</p>
+
+          <div class="sub-cards">
+            <div class="sub-card">
+              <h3>Проблемы со сном</h3>
+              <p>Трудно уснуть, часто просыпаешься или не высыпаешься. Помогают режим и отдых от экрана перед сном. Если не проходит — стоит сходить к врачу.</p>
+            </div>
+            <div class="sub-card">
+              <h3>Селф-харм</h3>
+              <p>Когда человек причиняет себе вред, это сигнал сильной боли, а не «желание внимания». Ты заслуживаешь поддержки.</p>
+            </div>
+            <div class="sub-card">
+              <h3>Зависимость</h3>
+              <p>От веществ, игр или телефона: когда становится трудно остановиться, даже если это вредит.</p>
+            </div>
+          </div>
+
+          <!-- Срочная помощь — особенно важна на этой вкладке -->
+          <div class="urgent-box">
+            <h3>Если ты причиняешь себе вред или думаешь об этом</h3>
+            <p>Пожалуйста, расскажи взрослому, которому доверяешь, или позвони — тебя выслушают и не будут осуждать:</p>
+            <div class="urgent-phones">
+              <a href="tel:150"><b>150</b> линия доверия, бесплатно и круглосуточно</a>
+              <a href="tel:112"><b>112</b> если есть прямая опасность</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. ДВЕ КАРТОЧКИ: «Что происходит с мозгом?» и «Что можно сделать?»
+         ============================================================ -->
+    <section class="duo-row">
+      <div class="duo-card">
+        <h2>🧠 Что происходит с мозгом?</h2>
+        <p>
+          При стрессе и тревоге в мозге включается «система тревоги» —
+          миндалевидное тело (амигдала). Оно запускает выброс гормонов стресса,
+          чтобы подготовить тело к опасности. Если это длится долго,
+          страдают сон, настроение, внимание и память.
+        </p>
+      </div>
+
+      <div class="duo-card duo-card-light">
+        <h2>♡ Что можно сделать?</h2>
+        <ul class="check-list">
+          <li>Говорить о своих чувствах с тем, кому доверяешь</li>
+          <li>Заботиться о себе: сон, еда, движение</li>
+          <li>Пробовать дыхательные упражнения</li>
+          <li>Не бояться обращаться за помощью</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4. ГДЕ НАЙТИ ПОДДЕРЖКУ + «ПОМНИ»
+         ============================================================ -->
+    <section class="support-strip">
+      <div class="support-strip-main">
+        <h2>👥 Где найти поддержку?</h2>
+        <p>Выбери удобный для себя формат:</p>
+        <div class="support-mini-grid">
+          <a href="#" class="support-mini">
+            <b>💬 Чат сообщества</b>
+            <span>Поговори с теми, кто понимает</span>
+          </a>
+          <a href="#" class="support-mini">
+            <b>🤖 ИИ-помощник</b>
+            <span>Задай вопрос и получи поддержку</span>
+          </a>
+          <a href="tel:150" class="support-mini">
+            <b>🛡️ Профессиональная помощь</b>
+            <span>Линия доверия 150 и школьный психолог</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="remember-big">
+        <div>
+          <h2>⭐ Помни:</h2>
+          <p>Просить о помощи — это не слабость, а смелость ♡</p>
+        </div>
+        <!-- Вторая картинка Квоки. Поменяй имя файла, если у тебя другое -->
+        <img src="images/kvoka6.png" alt="" class="remember-mascot" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ПОДВАЛ — такой же, как на главной -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="logo">VivaLaVida</span>
+      <p>Забота. Поддержка. Понимание.</p>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html#about">О нас</a> |
+      <a href="#">Частые вопросы</a> |
+      <a href="#">Контакты</a>
+    </nav>
+    <div class="socials">
+      <a href="#" class="social">Telegram</a>
+      <a href="#" class="social">Discord</a>
+      <a href="#" class="social">YouTube</a>
+      <a href="#" class="social">Instagram</a>
+    </div>
+    <p class="footer-note">Ты важен(а). ♡</p>
+  </footer>
+
+
+  <!-- ============================================================
+       СКРИПТ ДЛЯ ВКЛАДОК — такой же, как на social.html.
+       Плюс: любая кнопка с data-open="..." тоже открывает вкладку
+       (так работают карточки «С чем мы можем столкнуться?»).
+       ============================================================ -->
+  <script>
+    const tabButtons = document.querySelectorAll('.side-link');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    function openTab(id) {
+      tabButtons.forEach(function (button) {
+        button.classList.toggle('active', button.dataset.tab === id);
+      });
+      tabPanels.forEach(function (panel) {
+        panel.classList.toggle('active', panel.id === id);
+      });
+    }
+
+    // Кнопки в боковом меню
+    tabButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        openTab(button.dataset.tab);
+        history.replaceState(null, '', '#' + button.dataset.tab);
+      });
+    });
+
+    // Карточки и кнопки внутри страницы с data-open="id"
+    document.querySelectorAll('[data-open]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        openTab(el.dataset.open);
+        history.replaceState(null, '', '#' + el.dataset.open);
+        document.querySelector('.topic-layout').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Открыть вкладку из адреса, например mental.html#ocd
+    function openFromAddress() {
+      const id = location.hash.replace('#', '');
+      if (document.getElementById(id) && document.getElementById(id).classList.contains('tab-panel')) {
+        openTab(id);
+      }
+    }
+    openFromAddress();
+    window.addEventListener('hashchange', openFromAddress);
+  </script>
+
+</body>
+</html>

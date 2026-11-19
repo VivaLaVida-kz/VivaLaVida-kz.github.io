@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Эмоциональное состояние — VivaLaVida</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pangolin&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="sections.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       ШАПКА — одинаковая на всех страницах.
+       Кнопки сверху — ссылки на страницы разделов,
+       ссылки в окошках ведут сразу на нужную вкладку (#...).
+       ============================================================ -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span class="logo-heart">♡</span> VivaLaVida
+    </a>
+
+    <nav class="menu">
+      <div class="menu-item">
+        <a href="social.html" class="menu-button">Социальные трудности <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="social.html#communication" class="dropdown-link">
+            <b>Общение и отношения</b>
+            <span>Буллинг, конфликты, личные границы</span>
+          </a>
+          <a href="social.html#family" class="dropdown-link">
+            <b>Семья</b>
+            <span>Непонимание, гиперконтроль, перемены</span>
+          </a>
+          <a href="social.html#school" class="dropdown-link">
+            <b>Школа и учёба</b>
+            <span>Кибербуллинг, давление, адаптация</span>
+          </a>
+          <a href="social.html#society" class="dropdown-link">
+            <b>Общество</b>
+            <span>Дискриминация, ожидания, изоляция</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="mental.html" class="menu-button">Психическое здоровье <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="mental.html#mood" class="dropdown-link">
+            <b>Настроение</b>
+            <span>Депрессия, апатия, выгорание</span>
+          </a>
+          <a href="mental.html#anxiety" class="dropdown-link">
+            <b>Тревожные расстройства</b>
+            <span>Фобии, паника, тревога разлуки</span>
+          </a>
+          <a href="mental.html#overview" class="dropdown-link">
+            <b>РПП, ОКР, ПТСР, СДВГ</b>
+            <span>Что это и как отличить</span>
+          </a>
+          <a href="mental.html#other" class="dropdown-link">
+            <b>Другие состояния</b>
+            <span>Сон, селф-харм, зависимость</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="emotional.html" class="menu-button">Эмоциональное состояние <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="emotional.html#anxiety" class="dropdown-link">
+            <b>Тревога и стресс</b>
+            <span>Когда напряжение не отпускает</span>
+          </a>
+          <a href="emotional.html#burnout" class="dropdown-link">
+            <b>Выгорание и мотивация</b>
+            <span>Нет сил и ничего не хочется</span>
+          </a>
+          <a href="emotional.html#selfesteem" class="dropdown-link">
+            <b>Самооценка</b>
+            <span>Чувство вины, стыда, «я не такой»</span>
+          </a>
+          <a href="emotional.html#misunderstood" class="dropdown-link">
+            <b>Непонимание</b>
+            <span>Кажется, что никто не понимает</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#support" class="menu-button menu-link">Поддержка</a>
+    </nav>
+
+    <div class="menu-item menu-item-right">
+      <button class="menu-button contacts-button">✉ Контакты</button>
+      <div class="dropdown dropdown-right">
+        <p class="dropdown-title">Контакты</p>
+        <p class="dropdown-text">Почта: [скоро появится]</p>
+        <p class="dropdown-text">Telegram: [скоро появится]</p>
+        <p class="dropdown-text">Instagram: [скоро появится]</p>
+        <div class="dropdown-help">
+          Нужна помощь прямо сейчас?<br>
+          <b>150</b> — линия доверия для детей и молодёжи, бесплатно и круглосуточно
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1. ВЕРХНИЙ БЛОК: Квока слева, справа — «Что ты чувствуешь сейчас?»
+         Каждая «таблетка» открывает свою вкладку (data-open).
+         ============================================================ -->
+    <section class="hero-checkin">
+      <div class="hero-checkin-mascot">
+        <img src="images/kvoka4.png" alt="Квока" onerror="this.style.display='none'">
+      </div>
+
+      <div class="hero-checkin-text">
+        <a href="index.html" class="back-link">← На главную</a>
+        <h1 class="page-title">Эмоциональное состояние</h1>
+        <p class="page-intro">
+          Не всегда это диагноз — но всегда важно. Чувства — это сигналы,
+          и их можно понять.
+        </p>
+
+        <p class="checkin-question">Что ты чувствуешь сейчас?</p>
+        <div class="feel-chips">
+          <button class="feel-chip" data-open="anxiety">😟 Тревогу</button>
+          <button class="feel-chip" data-open="stress">😣 Постоянный стресс</button>
+          <button class="feel-chip" data-open="burnout">🪫 Нет сил</button>
+          <button class="feel-chip" data-open="selfesteem">🙈 Я хуже других</button>
+          <button class="feel-chip" data-open="motivation">🐌 Ничего не хочется</button>
+          <button class="feel-chip" data-open="guilt">😔 Вину или стыд</button>
+          <button class="feel-chip" data-open="misunderstood">🫥 Меня не понимают</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. ВКЛАДКИ. Каждая вкладка устроена так:
+         «Как это ощущается» (облачка-мысли) → «Почему так бывает» →
+         «Попробуй прямо сейчас» (упражнение) → «Когда нужна помощь»
+         ============================================================ -->
+    <section class="topic-layout">
+
+      <aside class="sidebar">
+        <p class="sidebar-title">💜 Эмоции</p>
+        <button class="side-link active" data-tab="anxiety"><span class="side-icon">😟</span> Тревога</button>
+        <button class="side-link" data-tab="stress"><span class="side-icon">😣</span> Постоянный стресс</button>
+        <button class="side-link" data-tab="burnout"><span class="side-icon">🪫</span> Выгорание</button>
+        <button class="side-link" data-tab="selfesteem"><span class="side-icon">🙈</span> Низкая самооценка</button>
+        <button class="side-link" data-tab="motivation"><span class="side-icon">🐌</span> Потеря мотивации</button>
+        <button class="side-link" data-tab="guilt"><span class="side-icon">😔</span> Вина и стыд</button>
+        <button class="side-link" data-tab="misunderstood"><span class="side-icon">🫥</span> Непонимание</button>
+      </aside>
+
+      <div class="tab-panels">
+
+        <!-- ТРЕВОГА -->
+        <div class="tab-panel active" id="anxiety">
+          <h2 class="panel-title">😟 Тревога</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Я всё время жду, что случится что-то плохое»</span>
+            <span>«Не могу перестать думать»</span>
+            <span>«Сердце колотится без причины»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Тревога — способ мозга подготовить нас к опасности. Иногда он «перестраховывается» и включает тревогу, даже когда опасности нет.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй прямо сейчас: «5-4-3-2-1»</h3>
+            <p>Назови 5 вещей, которые видишь, 4 — которые можешь потрогать, 3 — которые слышишь, 2 запаха и 1 вкус. Это возвращает внимание в «здесь и сейчас».</p>
+          </div>
+          <p class="when-help">Если тревога почти постоянная и мешает учиться, спать или общаться, загляни в раздел <a href="mental.html#anxiety">«Тревожные расстройства»</a> и поговори со специалистом.</p>
+        </div>
+
+        <!-- ПОСТОЯННЫЙ СТРЕСС -->
+        <div class="tab-panel" id="stress">
+          <h2 class="panel-title">😣 Постоянный стресс</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Я ничего не успеваю»</span>
+            <span>«Не могу расслабиться даже на выходных»</span>
+            <span>«Всё раздражает»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Стресс помогает собраться в трудный момент. Но когда он не выключается неделями, организм устаёт: портится сон, болит голова, всё раздражает.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй прямо сейчас: «Разгрузка головы»</h3>
+            <p>Выпиши на бумагу всё, что тревожит. Отметь, на что ты можешь повлиять сегодня, и выбери один маленький шаг. Остальное подождёт.</p>
+          </div>
+          <p class="when-help">Если из-за стресса пропал сон, часто болит голова или живот, расскажи об этом взрослому, которому доверяешь.</p>
+        </div>
+
+        <!-- ВЫГОРАНИЕ -->
+        <div class="tab-panel" id="burnout">
+          <h2 class="panel-title">🪫 Выгорание</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Нет сил ни на что»</span>
+            <span>«Мне уже всё равно на оценки»</span>
+            <span>«Раньше нравилось, а теперь нет»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Выгорание приходит после долгого напряжения без отдыха. Это не лень: силы просто закончились, и им нужно восстановиться.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй прямо сейчас: «Настоящий отдых»</h3>
+            <p>Запланируй 20 минут без учёбы и телефона: прогулка, музыка, рисование. Отдых — это тоже важное дело, а не потеря времени.</p>
+          </div>
+          <p class="when-help">Если ничего не радует дольше двух недель, посмотри раздел <a href="mental.html#mood">«Настроение»</a>.</p>
+        </div>
+
+        <!-- НИЗКАЯ САМООЦЕНКА -->
+        <div class="tab-panel" id="selfesteem">
+          <h2 class="panel-title">🙈 Низкая самооценка</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Я хуже других»</span>
+            <span>«У меня ничего не получается»</span>
+            <span>«Со мной что-то не так»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Самооценка складывается из того, что мы слышим о себе от других и говорим себе сами. Внутренний критик часто бывает несправедливо строгим.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй сегодня: «Три вещи»</h3>
+            <p>Вечером запиши три вещи, которые у тебя получились за день, даже совсем маленькие. Через неделю перечитай.</p>
+          </div>
+          <p class="when-help">Если мысли о себе стали очень жёсткими и не отпускают, с этим можно прийти к психологу.</p>
+        </div>
+
+        <!-- ПОТЕРЯ МОТИВАЦИИ -->
+        <div class="tab-panel" id="motivation">
+          <h2 class="panel-title">🐌 Потеря мотивации</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Не могу заставить себя начать»</span>
+            <span>«Зачем вообще стараться?»</span>
+            <span>«Всё откладываю на потом»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Мотивация падает от усталости, страха ошибиться или когда цель кажется слишком большой и далёкой.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй прямо сейчас: «Правило 5 минут»</h3>
+            <p>Договорись с собой заняться делом всего 5 минут. Часто самое сложное — начать, а дальше идёт легче.</p>
+          </div>
+          <p class="when-help">Если не хочется вообще ничего и уже долго, это может быть связано с <a href="mental.html#mood">настроением</a>.</p>
+        </div>
+
+        <!-- ВИНА И СТЫД -->
+        <div class="tab-panel" id="guilt">
+          <h2 class="panel-title">😔 Чувство вины и стыда</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Это всё из-за меня»</span>
+            <span>«Мне стыдно за себя»</span>
+            <span>«Я всех подвожу»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Вина говорит: «я поступил(а) плохо», а стыд — «я плохой(ая)». Вина помогает исправить ошибку, а стыд чаще просто ранит.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй прямо сейчас: «Как другу»</h3>
+            <p>Представь, что это случилось с твоим другом. Что бы ты ему сказал(а)? Попробуй сказать то же самое себе.</p>
+          </div>
+          <p class="when-help">Если тебе стыдно из-за того, что кто-то причинил тебе вред, — это не твоя вина. Расскажи взрослому или позвони на линию <b>150</b>.</p>
+        </div>
+
+        <!-- НЕПОНИМАНИЕ -->
+        <div class="tab-panel" id="misunderstood">
+          <h2 class="panel-title">🫥 Непонимание</h2>
+          <p class="feel-label">Как это ощущается:</p>
+          <div class="thought-bubbles">
+            <span>«Меня никто не понимает»</span>
+            <span>«Я не такой(ая), как все»</span>
+            <span>«Мне не с кем поговорить»</span>
+          </div>
+          <div class="why-box">
+            <h3>Почему так бывает</h3>
+            <p>Это чувство знакомо очень многим подросткам: ты меняешься, и не всегда сразу находишь «своих» людей.</p>
+          </div>
+          <div class="try-box">
+            <h3>✨ Попробуй сегодня: «Одно сообщение»</h3>
+            <p>Напиши одному человеку, с которым тебе хоть немного комфортно. Или загляни в наше сообщество — там есть те, кто чувствует похоже.</p>
+          </div>
+          <p class="when-help">Если одиночество давит постоянно, с этим можно прийти к психологу или позвонить на линию <b>150</b>.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. НИЖНИЙ РЯД: дыхательное упражнение + «Помни»
+         Круг сам плавно увеличивается (вдох) и уменьшается (выдох).
+         ============================================================ -->
+    <section class="calm-row">
+      <div class="breath-card">
+        <div>
+          <h2>Подыши вместе с Квокой</h2>
+          <p>Следи за кругом: когда он растёт — медленно вдыхай, когда уменьшается — медленно выдыхай. Повтори несколько раз.</p>
+        </div>
+        <div class="breath-visual">
+          <!-- Квока рядом с кругом. Поменяй имя файла на своё -->
+          <img src="images/kvoka3.png" alt="Квока" class="breath-mascot">
+          <div class="breath-circle">
+            <span class="breath-in">Вдох…</span>
+            <span class="breath-out">Выдох…</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="remember-card">
+        <p>Все чувства<br>имеют право быть.<br>Ты справишься ♡</p>
+      </div>
+
+      <div class="resources-card">
+        <h3>🔗 Куда обратиться</h3>
+        <a href="#" class="resource-link">Чат сообщества <span>↗</span></a>
+        <a href="#" class="resource-link">Чат-бот помощник <span>↗</span></a>
+        <a href="tel:150" class="resource-link">Линия доверия 150 <span>↗</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ПОДВАЛ — такой же, как на главной -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="logo">VivaLaVida</span>
+      <p>Забота. Поддержка. Понимание.</p>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html#about">О нас</a> |
+      <a href="#">Частые вопросы</a> |
+      <a href="#">Контакты</a>
+    </nav>
+    <div class="socials">
+      <a href="#" class="social">Telegram</a>
+      <a href="#" class="social">Discord</a>
+      <a href="#" class="social">YouTube</a>
+      <a href="#" class="social">Instagram</a>
+    </div>
+    <p class="footer-note">Ты важен(а). ♡</p>
+  </footer>
+
+
+  <!-- ============================================================
+       СКРИПТ ДЛЯ ВКЛАДОК — такой же, как на social.html.
+       Плюс: любая кнопка с data-open="..." тоже открывает вкладку
+       (так работают карточки «С чем мы можем столкнуться?»).
+       ============================================================ -->
+  <script>
+    const tabButtons = document.querySelectorAll('.side-link');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    function openTab(id) {
+      tabButtons.forEach(function (button) {
+        button.classList.toggle('active', button.dataset.tab === id);
+      });
+      tabPanels.forEach(function (panel) {
+        panel.classList.toggle('active', panel.id === id);
+      });
+    }
+
+    // Кнопки в боковом меню
+    tabButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        openTab(button.dataset.tab);
+        history.replaceState(null, '', '#' + button.dataset.tab);
+      });
+    });
+
+    // Карточки и кнопки внутри страницы с data-open="id"
+    document.querySelectorAll('[data-open]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        openTab(el.dataset.open);
+        history.replaceState(null, '', '#' + el.dataset.open);
+        document.querySelector('.topic-layout').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Открыть вкладку из адреса, например mental.html#ocd
+    function openFromAddress() {
+      const id = location.hash.replace('#', '');
+      if (document.getElementById(id) && document.getElementById(id).classList.contains('tab-panel')) {
+        openTab(id);
+      }
+    }
+    openFromAddress();
+    window.addEventListener('hashchange', openFromAddress);
+  </script>
+
+</body>
+</html>
