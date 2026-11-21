@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VivaLaVida — жизнь стоит того, чтобы за неё бороться</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pangolin&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span class="logo-heart">♡</span> VivaLaVida
+    </a>
+
+    <nav class="menu">
+      <div class="menu-item">
+        <a href="social.html" class="menu-button">Социальные трудности <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="social.html#communication" class="dropdown-link">
+            <b>Общение и отношения</b>
+            <span>Буллинг, конфликты, личные границы</span>
+          </a>
+          <a href="social.html#family" class="dropdown-link">
+            <b>Семья</b>
+            <span>Непонимание, гиперконтроль, перемены</span>
+          </a>
+          <a href="social.html#school" class="dropdown-link">
+            <b>Школа и учёба</b>
+            <span>Кибербуллинг, давление, адаптация</span>
+          </a>
+          <a href="social.html#society" class="dropdown-link">
+            <b>Общество</b>
+            <span>Дискриминация, ожидания, изоляция</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="mental.html" class="menu-button">Психическое здоровье <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="mental.html#mood" class="dropdown-link">
+            <b>Настроение</b>
+            <span>Депрессия, апатия, выгорание</span>
+          </a>
+          <a href="mental.html#anxiety" class="dropdown-link">
+            <b>Тревожные расстройства</b>
+            <span>Фобии, паника, тревога разлуки</span>
+          </a>
+          <a href="mental.html#overview" class="dropdown-link">
+            <b>РПП, ОКР, ПТСР, СДВГ</b>
+            <span>Что это и как отличить</span>
+          </a>
+          <a href="mental.html#other" class="dropdown-link">
+            <b>Другие состояния</b>
+            <span>Сон, селф-харм, зависимость</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="emotional.html" class="menu-button">Эмоциональное состояние <span class="arrow">▾</span></a>
+        <div class="dropdown">
+          <a href="emotional.html#anxiety" class="dropdown-link">
+            <b>Тревога и стресс</b>
+            <span>Когда напряжение не отпускает</span>
+          </a>
+          <a href="emotional.html#burnout" class="dropdown-link">
+            <b>Выгорание и мотивация</b>
+            <span>Нет сил и ничего не хочется</span>
+          </a>
+          <a href="emotional.html#selfesteem" class="dropdown-link">
+            <b>Самооценка</b>
+            <span>Чувство вины, стыда, «я не такой»</span>
+          </a>
+          <a href="emotional.html#misunderstood" class="dropdown-link">
+            <b>Непонимание</b>
+            <span>Кажется, что никто не понимает</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#support" class="menu-button menu-link">Поддержка</a>
+    </nav>
+
+    <div class="menu-item menu-item-right">
+      <button class="menu-button contacts-button">✉ Контакты</button>
+      <div class="dropdown dropdown-right">
+        <p class="dropdown-title">Контакты</p>
+        <p class="dropdown-text">Почта: [скоро появится]</p>
+        <p class="dropdown-text">Telegram: [скоро появится]</p>
+        <p class="dropdown-text">Instagram: [скоро появится]</p>
+        <div class="dropdown-help">
+          Нужна помощь прямо сейчас?<br>
+          <b>150</b> — линия доверия для детей и молодёжи, бесплатно и круглосуточно
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="hero-title">VivaLaVida</h1>
+        <p class="hero-subtitle">— жизнь стоит того, чтобы за неё бороться .</p>
+        <p class="hero-description">
+          Мы рядом, чтобы поддержать, выслушать<br>
+          и помочь найти решение.
+        </p>
+        <a href="#about" class="button">Узнать больше о нас →</a>
+      </div>
+
+      <div class="hero-mascot">
+        <!-- КАРТИНКА КВАКИ.
+             Положи файл с маскотом в папку images и назови его kvoka.png.
+             Пока файла нет, вместо него видна пунктирная заглушка. -->
+        <img src="images/kvoka.png" alt="Квока — маскот VivaLaVida" class="mascot-img"
+             onerror="this.style.display='none'">
+      </div>
+
+      <div class="speech-bubble">
+        Здесь ты можешь найти поддержку по любым вопросам!
+      </div>
+    </section>
+
+
+    <section class="topics" id="about">
+
+      <a href="social.html" class="topic-card topic-purple">
+        <!-- Иконка нарисована кодом (svg). Можно заменить на картинку: <img src="images/people.png"> -->
+        <svg class="topic-icon" viewBox="0 0 120 90" aria-hidden="true">
+          <circle cx="30" cy="32" r="14"/><circle cx="90" cy="32" r="14"/><circle cx="60" cy="24" r="17"/>
+          <path d="M8 88 a22 26 0 0 1 44 0z"/><path d="M68 88 a22 26 0 0 1 44 0z"/><path d="M32 88 a28 32 0 0 1 56 0z"/>
+        </svg>
+        <div>
+          <h2>Социальные трудности</h2>
+          <p>Проблемы в обществе, школе, семье и отношениях.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="#" class="topic-card topic-grey">
+        <svg class="topic-icon" viewBox="0 0 120 90" aria-hidden="true">
+          <path d="M70 88 V72 h10 a6 6 0 0 0 6-6 V56 l8-4 -8-12 C86 18 70 4 50 4 C28 4 14 22 14 42 c0 14 8 24 14 30 v16z"/>
+          <path d="M40 40 c0-12 26-12 26 0 c0 12-22 12-22 0 c0-8 16-8 16 0" fill="none" stroke="#FBF7FD" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <h2>Психическое здоровье</h2>
+          <p>Узнай больше о ментальных состояниях и способах помощи.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="#" class="topic-card topic-pink">
+        <svg class="topic-icon" viewBox="0 0 120 90" aria-hidden="true">
+          <path d="M60 86 C20 60 8 42 8 26 C8 12 20 4 32 4 C44 4 54 12 60 22 C66 12 76 4 88 4 C100 4 112 12 112 26 C112 42 100 60 60 86z"/>
+        </svg>
+        <div>
+          <h2>Эмоциональное состояние</h2>
+          <p>Пойми, что с тобой происходит, и найди способы справиться.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+    </section>
+
+
+    <section class="support" id="support">
+      <div class="support-intro">
+        <h2>Поддержка</h2>
+        <p>
+          Ты можешь обратиться за поддержкой в любое время.
+          Здесь ты найдёшь полезные ресурсы, чаты и нашего чат-бота.
+        </p>
+        <a href="#" class="button">Перейти в раздел →</a>
+      </div>
+
+      <div class="support-card">
+        <h3>💬 Чаты сообщества</h3>
+        <p>Общайся с людьми, которые сталкиваются с похожими проблемами.</p>
+        <a href="#" class="small-link">Перейти к чатам →</a>
+      </div>
+
+      <div class="support-card">
+        <h3>🤖 Чат-бот помощник</h3>
+        <p>Задай вопрос, получи поддержку и советы. Бот — это ИИ, а не психолог.</p>
+        <a href="#" class="small-link">Начать чат →</a>
+      </div>
+
+      <div class="support-card support-card-urgent">
+        <h3>⚠ Когда нужна реальная помощь?</h3>
+        <p>Если тебе плохо и ты в опасности — позвони, тебя выслушают:</p>
+        <p class="phones"><b>150</b> линия доверия · <b>111</b> семья и дети · <b>112</b> экстренно</p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="logo"> VivaLaVida</span>
+      <p>Забота. Поддержка. Понимание.</p>
+    </div>
+
+    <nav class="footer-links">
+      <a href="#about">О нас</a> |
+      <a href="#">Частые вопросы</a> |
+      <a href="#">Контакты</a>
+    </nav>
+
+    <div class="socials">
+      <a href="#" class="social">Telegram</a>
+      <a href="#" class="social">Discord</a>
+      <a href="#" class="social">YouTube</a>
+      <a href="#" class="social">Instagram</a>
+    </div>
+
+    <p class="footer-note">Ты важен(а). ♡</p>
+  </footer>
+
+</body>
+</html>
